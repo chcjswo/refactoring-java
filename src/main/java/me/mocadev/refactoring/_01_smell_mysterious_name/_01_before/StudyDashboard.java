@@ -12,7 +12,7 @@ import java.util.Set;
 
 public class StudyDashboard {
 
-    private final Set<String> usernames = new HashSet<>();
+    private final Set<String> reviewers = new HashSet<>();
 
     private final Set<String> reviews = new HashSet<>();
 
@@ -21,15 +21,15 @@ public class StudyDashboard {
 		GHRepository repository = gitHub.getRepository("chcjswo/refactoring-java");
 		GHIssue issue = repository.getIssue(1);
 
-        List<GHIssueComment> comments = issue.getComments();
-        for (GHIssueComment comment : comments) {
-            usernames.add(comment.getUser().getName());
-            reviews.add(comment.getBody());
+        List<GHIssueComment> reviews = issue.getComments();
+        for (GHIssueComment review : reviews) {
+            reviewers.add(review.getUser().getName());
+            this.reviews.add(review.getBody());
         }
     }
 
-    public Set<String> getUsernames() {
-        return usernames;
+    public Set<String> getReviewers() {
+        return reviewers;
     }
 
     public Set<String> getReviews() {
@@ -40,7 +40,7 @@ public class StudyDashboard {
 
         StudyDashboard studyDashboard = new StudyDashboard();
         studyDashboard.loadReviews();
-        studyDashboard.getUsernames().forEach(System.out::println);
+        studyDashboard.getReviewers().forEach(System.out::println);
         studyDashboard.getReviews().forEach(System.out::println);
     }
 }
