@@ -1,4 +1,4 @@
-package me.mocadev.refactoring._01_smell_mysterious_name;
+package me.mocadev.refactoring.inflearn._01_smell_mysterious_name;
 
 import org.kohsuke.github.GHIssue;
 import org.kohsuke.github.GHIssueComment;
