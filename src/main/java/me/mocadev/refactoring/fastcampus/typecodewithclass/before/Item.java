@@ -1,4 +1,4 @@
-package me.mocadev.refactoring.fastcampus.typecode.before;
+package me.mocadev.refactoring.fastcampus.typecodewithclass.before;
 
 /**
  * @author chcjswo
